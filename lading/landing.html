@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO ZERO AO CORTE</title>
+ <link rel="stylesheet" href="./landing.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-box">
+                <img src="./3f7d6323-26e0-4efc-acf9-3fb324cdec6d.jpg" alt="Logo DO ZERO AO CORTE">
+                <br>
+                <h1 class="logo-text">DO ZERO AO CORTE</h1>
+            </div>
+            <a href="#inscricao" class="btn-nav">Inscreva-se</a>
+        </nav>
+
+        <div class="hero">
+            <h2>Curso de Barbeiro Profissional</h2>
+            <br>
+            <p class="neves">Aprenda do zero ao avançado com técnicas modernas, aulas práticas e certificado exclusivo.</p>
+            <br>
+
+            <a href="#inscricao" class="btn-cta">Quero me inscrever</a>
+
+            <div id="contador" class="contador"></div>
+        </div>
+    </header>
+
+
+    <div class="apresentacao">
+    <img src="./../curso lucas/WhatsApp Image 2025-11-21 at 12.43.09.jpeg" alt="Foto do barbeiro">
+    <div class="texto-apresentacao">
+        <h2>Barbeiro com mais de 15 anos de experiência</h2>
+        <p>
+            Sou especializado em cortes masculinos, atendimento infantil e agora estou
+            compartilhando meu conhecimento através de cursos completos para quem quer
+            entrar de verdade no mundo da barbearia.  
+            Experiência, técnica e prática reunidas em um treinamento direto ao ponto.
+        </p>
+       
+    </div>
+</div>
+
+    <!-- SOBRE -->
+    <section class="sobre">
+        <h2>O que você vai aprender?</h2>
+        <br>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Técnicas de Corte</h3>
+                <br>
+                
+                <p>Fade, tesoura, navalha, infantil, visagismo e muito mais.</p>
+                <br>
+            </div>
+
+            <div class="card">
+                <h3>Atendimento Profissional</h3>
+                <br>
+                <p>Como receber clientes, vender mais e fidelizar.</p>
+            </div>
+<br>
+            <div class="card">
+                <h3>Barba e Acabamento</h3> 
+                <br>
+                <p>Modelagem, alinhamento e finalizações premium.</p>
+            </div>
+<br>
+            <div class="card">
+                <h3>Marketing para Barbeiros</h3>
+                <br>
+                <p>Instagram, conteúdo e estratégias pra lotar sua agenda.</p>
+                <br>
+            </div>
+   <br>
+
+  <div class="video-box">
+    <iframe src="Perfeito__aqui_202510221401.mp4" allowfullscreen></iframe>
+  </div>
+
+ 
+
+</div>
+    <!-- Cole dentro do <body> do seu HTML -->
+<div class="photo-gallery" id="photoGallery">
+  <div class="photo"><img src="./../curso lucas/33436be5-4031-4868-ac33-0e1f75fd56fa.jpg" alt="Foto 1"></div>
+  <div class="photo"><img src="./../curso lucas/96f2a85a-abdc-4de0-b3db-039af5148914.jpg" alt="Foto 2"></div>
+  <div class="photo"><img src="./../curso lucas/575918b0-481e-4c4c-859e-07785d871af3.jpg " alt="Foto 3"></div>
+  <div class="photo"><img src="./../curso lucas/6679fc00-a767-4a2e-867a-74384a83cb31.jpg " alt="Foto 4"></div>
+  <div class="photo"><img src="./../curso lucas/69664d26-2ba7-49c9-8b34-b8f7bc6166f0.jpg " alt="Foto 5"></div>
+  <div class="photo"><img src=" ./../../curso lucas/8978f1aa-2d87-4655-b90c-3c4dbe7a76ed.jpg" alt="Foto 6"></div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
+  <img id="lightboxImg" src="" alt="">
+  <button class="close-btn" onclick="closeLightbox(); event.stopPropagation()">✕</button>
+</div>
+
+<!-- Cole este <style> no <head> ou logo antes do fechamento do body -->
+<style>
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    max-width: 1100px;
+    margin: 18px auto;
+    padding: 0 12px;
+  }
+
+  .photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f2f2f2;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s ease, filter .35s ease;
+    cursor: pointer;
+  }
+
+  .photo:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.05) contrast(1.03);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    padding: 20px;
+  }
+  .lightbox.hidden { display: none; }
+  .lightbox img {
+    max-width: 96%;
+    max-height: 92%;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  }
+  .close-btn {
+    position: fixed;
+    right: 18px;
+    top: 18px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  /* Responsividade extra */
+  @media (min-width: 900px) {
+    .photo-gallery { gap: 14px; }
+  }
+</style>
+
+<!-- Script: abre a imagem em lightbox -->
+<script>
+  document.querySelectorAll('.photo img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      lbImg.src = this.src;
+      lbImg.alt = this.alt || '';
+      lb.classList.remove('hidden');
+    });
+  });
+
+  function closeLightbox() {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    lb.classList.add('hidden');
+    // limpa src pra liberar memória
+    lbImg.src = '';
+  }
+
+  // fecha com ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+    <!-- GALERIA -->
+ 
+
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos">
+        <h2>Depoimentos dos alunos</h2>
+
+        <div class="dep-grid">
+            <div class="dep">
+                <p>"Aprendi mais em uma semana do que em anos tentando sozinho!"</p>
+                <span>— Ex-aluno</span>
+            </div>
+
+            <div class="dep">
+                <p>"O curso é direto ao ponto e prático. Vale cada centavo."</p>
+                <span>— Ex-aluno</span>
+            </div>
+
+            <div class="dep">
+                <p>"Minha agenda lotou depois das dicas de marketing."</p>
+                <span>— Ex-aluno</span>
+            </div>
+        </div>
+    </section>
+<br>
+    <!-- INSCRIÇÃO -->
+    <section class="inscricao" id="inscricao">
+        <h2>Garanta sua vaga</h2>
+        <p>Próxima turma: <strong>15 de dezembro</strong> — vagas limitadas!</p>
+        <p><strong>Valor do curso: R$ 2500</strong></p>
+<br>
+        <a class="btn-wpp" href="https://wa.me/5511943575491" target="_blank">
+            Falar no WhatsApp
+        </a>
+        <br>
+    </section>
+<br>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 DO ZERO AO CORTE — Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // CONTADOR REGRESSIVO
+        const dataAlvo = new Date("Dec 15, 2025 00:00:00").getTime();
+
+        setInterval(function () {
+            const agora = new Date().getTime();
+            const distancia = dataAlvo - agora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML =
+                `⏳ Faltam <strong>${dias} dias ${horas}h ${minutos}m ${segundos}s</strong> para o início`;
+
+        }, 1000);
+    </script>
+
+</body>
+</html>
